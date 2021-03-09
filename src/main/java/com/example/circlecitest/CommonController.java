@@ -1,5 +1,7 @@
 package com.example.circlecitest;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -32,5 +34,11 @@ public class CommonController {
 			map.put("No."+(i+1)+"", randomStr);
 		}
 		return map;
+	}
+	
+	@GetMapping("/time")
+	public String getCurrentTime(){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		return sdf.format(new Date());
 	}
 }
