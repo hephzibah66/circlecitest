@@ -21,4 +21,16 @@ public class CommonController {
 		}
 		return map;
 	}
+	
+	@GetMapping("/home")
+	public Map<String,String> home(){
+		Map<String, String> map = new HashMap<String,String>();
+		
+		Random rnd = new Random();
+		for(int i= 0; i < 100; i++) {
+			String randomStr = String.valueOf((char) ((int) (rnd.nextInt(26)) + 65));
+			map.put("No."+(i+1)+"", randomStr);
+		}
+		return map;
+	}
 }
